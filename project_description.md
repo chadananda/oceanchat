@@ -25,3 +25,12 @@ The website will offer multiple knowledge repositories, including "Core Library,
 - Language Model: GPT-4 for generating responses and translation
 - Research and Actions: Langchain
 - Semantic Search: Pinecone (for searching and retrieving information from documents)
+
+### Code style guide
+
+- We follow the new SvelteKit convention of named folders for every page, +layout.svelte files for layout logic (using Skeleton where possible), +page.svelte for code logic and components for most styling
+- When styling, try to use TailwindCSS when possible. Only use custom classes when it makes sense because of multiple repeating elements.
+- Document all CSS carefully and all Javacript with comments intended to be ready by the AI
+- Use JSDoc headers for all functions with copious intent explanations
+
+

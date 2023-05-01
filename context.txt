@@ -5,23 +5,26 @@
 │   ├── _app
 │   │   ├── immutable
 │   │   │   ├── assets
-│   │   │   │   ├── _layout.45967b20.css
-│   │   │   │   └── _layout.9733e70b.css
+│   │   │   │   ├── _layout.6e5aa143.css
+│   │   │   │   ├── _layout.ecea72c6.css
+│   │   │   │   └── _page.b1a491d3.css
 │   │   │   ├── chunks
-│   │   │   │   ├── 0.7a52ecb2.js
-│   │   │   │   ├── 1.71d4e73d.js
-│   │   │   │   ├── 2.0f93b5a6.js
-│   │   │   │   ├── 3.de81ec57.js
-│   │   │   │   ├── index.23a726e9.js
-│   │   │   │   ├── index.f57a59a7.js
-│   │   │   │   └── singletons.9635758e.js
+│   │   │   │   ├── 0.39c6eb3b.js
+│   │   │   │   ├── 1.9d13ae0a.js
+│   │   │   │   ├── 2.eaffc98a.js
+│   │   │   │   ├── 3.e130c33e.js
+│   │   │   │   ├── 4.2131c91e.js
+│   │   │   │   ├── index.61221a7d.js
+│   │   │   │   ├── index.b4c629fb.js
+│   │   │   │   └── singletons.48f0e9ee.js
 │   │   │   └── entry
-│   │   │       ├── _layout.svelte.4a68c7b0.js
-│   │   │       ├── _page.svelte.fa3aa4aa.js
-│   │   │       ├── app.cfce2238.js
-│   │   │       ├── error.svelte.867bbca6.js
-│   │   │       ├── login-page.svelte.fa3aa4aa.js
-│   │   │       └── start.7dabd4ac.js
+│   │   │       ├── _layout.svelte.a2405d53.js
+│   │   │       ├── _page.svelte.c29d3194.js
+│   │   │       ├── app.1f8584e3.js
+│   │   │       ├── chat-page.svelte.28fb5a45.js
+│   │   │       ├── error.svelte.77484c51.js
+│   │   │       ├── login-page.svelte.7354e461.js
+│   │   │       └── start.fd735501.js
 │   │   └── version.json
 │   ├── favicon.png
 │   └── index.html
@@ -48,7 +51,9 @@
 │   │   ├── auth.js
 │   │   └── components
 │   │       ├── ChatInput.svelte
-│   │       └── Message.svelte
+│   │       ├── ChatLayout.svelte
+│   │       ├── ChatMessage.svelte
+│   │       └── ConversationItem.svelte
 │   └── routes
 │       ├── +layout.svelte
 │       ├── +page.svelte
@@ -65,7 +70,7 @@
 ├── tree.txt
 └── vite.config.js
 
-16 directories, 49 files
+16 directories, 54 files
 
 --- PACKAGE.JSON ---
 {
@@ -131,6 +136,16 @@ The website will offer multiple knowledge repositories, including "Core Library,
 - Language Model: GPT-4 for generating responses and translation
 - Research and Actions: Langchain
 - Semantic Search: Pinecone (for searching and retrieving information from documents)
+
+### Code style guide
+
+- We follow the new SvelteKit convention of named folders for every page, +layout.svelte files for layout logic (using Skeleton where possible), +page.svelte for code logic and components for most styling
+- When styling, try to use TailwindCSS when possible. Only use custom classes when it makes sense because of multiple repeating elements.
+- Document all CSS carefully and all Javacript with comments intended to be ready by the AI
+- Use JSDoc headers for all functions with copious intent explanations
+
+
+
 --- PROJECT_STATUS.MD ---
 ### Work Done So Far:
 

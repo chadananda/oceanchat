@@ -1,17 +1,11 @@
 <script>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
-	import '@skeletonlabs/skeleton/styles/all.css';
-	// Most of your app wide CSS should be put in this file
-	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	export let conversations;
+	export let currentRepository;
 </script>
 
-<!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
-			<!-- App Bar -->
 			<AppBar>
 					<svelte:fragment slot="lead">
 							<strong class="text-xl uppercase">Ocean Chat</strong>
@@ -21,6 +15,14 @@
 					</svelte:fragment>
 			</AppBar>
 	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
+	<div class="flex h-screen">
+			<div class="w-1/4 bg-gray-800 text-white">
+					<!-- Render your sidebar component here -->
+					<slot name="sidebar"></slot>
+			</div>
+			<div class="w-3/4 p-4 bg-gray-200">
+					<!-- Page Route Content -->
+					<slot />
+			</div>
+	</div>
 </AppShell>
