@@ -11,14 +11,15 @@
 		"test": "playwright test",
 		"test:unit": "vitest",
 		"deploy": "npm run build && git checkout -B gh-pages && git add -f build && git commit -m 'deploy to GitHub Pages' && git push origin gh-pages --force && git checkout -",
-		"generate_context": "echo '--- FILE TREE ---' > context.txt && tree -I node_modules >> context.txt && echo '\n--- PACKAGE.JSON ---' >> context.txt && cat package.json >> context.txt && echo '\n--- PROJECT_DESCRIPTION.MD ---' >> context.txt && cat project_description.md >> context.txt && echo '\n--- PROJECT_STATUS.MD ---' >> context.txt && cat project_status.md >> context.txt"
+		"generate_context": "node generate_context.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@skeletonlabs/skeleton": "^1.2.5",
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-static": "^1.0.0-next.50",
-		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/adapter-static": "^1.0.6",
+		"@sveltejs/kit": "^1.15.9",
+		"@sveltejs/vite-plugin-svelte": "^2.1.1",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.14",
@@ -28,6 +29,7 @@
 		"tailwindcss": "^3.3.2",
 		"typescript": "^5.0.0",
 		"vite": "^4.3.0",
+		"vite-plugin-html": "^3.2.0",
 		"vitest": "^0.25.3"
 	},
 	"type": "module"

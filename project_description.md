@@ -32,5 +32,6 @@ The website will offer multiple knowledge repositories, including "Core Library,
 - When styling, try to use TailwindCSS when possible. Only use custom classes when it makes sense because of multiple repeating elements.
 - Document all CSS carefully and all Javacript with comments intended to be ready by the AI
 - Use JSDoc headers for all functions with copious intent explanations
+- ALL files, whenever possible, should have the filename at the top of the file in a commented line for further clarity
 
 

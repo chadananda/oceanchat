@@ -11,3 +11,4 @@ vite.config.ts.timestamp-*
 .npmrc
 .vscode/
 package-lock.json
+dist/
