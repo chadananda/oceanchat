@@ -42,6 +42,9 @@
 │   ├── app.d.ts
 │   ├── app.html
 │   ├── app.postcss
+│   ├── components
+│   │   ├── ChatInput.svelte
+│   │   └── Message.svelte
 │   ├── index.test.js
 │   ├── lib
 │   │   ├── api.js
@@ -49,6 +52,8 @@
 │   └── routes
 │       ├── +layout.svelte
 │       ├── +page.svelte
+│       ├── chat
+│       │   └── +page.svelte
 │       └── login
 │           └── +page.svelte
 ├── static
@@ -60,7 +65,7 @@
 ├── tree.txt
 └── vite.config.js
 
-14 directories, 46 files
+16 directories, 49 files
 
 --- PACKAGE.JSON ---
 {
