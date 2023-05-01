@@ -42,13 +42,13 @@
 │   ├── app.d.ts
 │   ├── app.html
 │   ├── app.postcss
-│   ├── components
-│   │   ├── ChatInput.svelte
-│   │   └── Message.svelte
 │   ├── index.test.js
 │   ├── lib
 │   │   ├── api.js
-│   │   └── auth.js
+│   │   ├── auth.js
+│   │   └── components
+│   │       ├── ChatInput.svelte
+│   │       └── Message.svelte
 │   └── routes
 │       ├── +layout.svelte
 │       ├── +page.svelte
