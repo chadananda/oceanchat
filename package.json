@@ -10,7 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"test": "playwright test",
 		"test:unit": "vitest",
-		"deploy": "npm run build && git checkout -B gh-pages && git add -f build && git commit -m 'deploy to GitHub Pages' && git push origin gh-pages --force && git checkout -"
+		"deploy": "npm run build && git checkout -B gh-pages && git add -f build && git commit -m 'deploy to GitHub Pages' && git push origin gh-pages --force && git checkout -",
+		"generate_context": "echo '--- FILE TREE ---' > context.txt && tree -I node_modules >> context.txt && echo '\n--- PACKAGE.JSON ---' >> context.txt && cat package.json >> context.txt && echo '\n--- PROJECT_DESCRIPTION.MD ---' >> context.txt && cat project_description.md >> context.txt && echo '\n--- PROJECT_STATUS.MD ---' >> context.txt && cat project_status.md >> context.txt"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
