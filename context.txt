@@ -1,3 +1,7 @@
+The following information is context information about this project for the purpose of informing AI about the project. It includes a file tree of the project, the contents of certain files, and a project description and status.
+
+--- CURRENT WORKING DIRECTORY: /Users/chad/Dropbox/Public/JS/Projects/websites/oceanchat ---
+
 --- FILE TREE ---
 /Users/chad/Dropbox/Public/JS/Projects/websites/oceanchat
 ├── LICENSE
