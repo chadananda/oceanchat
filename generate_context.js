@@ -9,6 +9,9 @@ function generateContext() {
   // Get the current working directory (PWD)
   const pwd = process.cwd();
 
+  // generate header prompt
+  fs.writeFileSync(contextFilePath, "The following information is context information about this project for the purpose of informing AI about the project. It includes a file tree of the project, the contents of certain files, and a project description and status.\n\n");
+
   // Generate the file tree using the `tree` command
   const fileTree = execSync(`tree "${pwd}" -I "node_modules|dist|build|context.txt|*.log"`).toString();
 
