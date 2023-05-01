@@ -10,10 +10,10 @@ const config = {
 	kit: {
 		// Use the adapter-static for GitHub Pages hosting
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		})
+			 pages: 'build',
+			 assets: 'build',
+			 fallback: 'index.html' // Add this line
+		}),
 	}
 };
 

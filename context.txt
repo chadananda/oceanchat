@@ -1,6 +1,30 @@
 --- FILE TREE ---
 .
 ├── LICENSE
+├── build
+│   ├── _app
+│   │   ├── immutable
+│   │   │   ├── assets
+│   │   │   │   ├── _layout.45967b20.css
+│   │   │   │   └── _layout.9733e70b.css
+│   │   │   ├── chunks
+│   │   │   │   ├── 0.7a52ecb2.js
+│   │   │   │   ├── 1.71d4e73d.js
+│   │   │   │   ├── 2.0f93b5a6.js
+│   │   │   │   ├── 3.de81ec57.js
+│   │   │   │   ├── index.23a726e9.js
+│   │   │   │   ├── index.f57a59a7.js
+│   │   │   │   └── singletons.9635758e.js
+│   │   │   └── entry
+│   │   │       ├── _layout.svelte.4a68c7b0.js
+│   │   │       ├── _page.svelte.fa3aa4aa.js
+│   │   │       ├── app.cfce2238.js
+│   │   │       ├── error.svelte.867bbca6.js
+│   │   │       ├── login-page.svelte.fa3aa4aa.js
+│   │   │       └── start.7dabd4ac.js
+│   │   └── version.json
+│   ├── favicon.png
+│   └── index.html
 ├── context.txt
 ├── functions
 │   ├── chatApi.js
@@ -36,7 +60,7 @@
 ├── tree.txt
 └── vite.config.js
 
-8 directories, 28 files
+14 directories, 46 files
 
 --- PACKAGE.JSON ---
 {
