@@ -1,46 +1,34 @@
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-// Function to recursively scan a directory for files matching a pattern
-function scanDirectory(directory, pattern, fileList = []) {
-  const files = fs.readdirSync(directory);
-
-  for (const file of files) {
-    const filePath = path.join(directory, file);
-    const stat = fs.statSync(filePath);
-
-    if (stat.isDirectory()) {
-      scanDirectory(filePath, pattern, fileList);
-    } else if (pattern.test(file)) {
-      fileList.push(filePath);
-    }
-  }
-
-  return fileList;
-}
-
 // Generate context
 function generateContext() {
-  const scriptUrl = new URL(import.meta.url);
-  const projectDir = path.dirname(scriptUrl.pathname);
-  const contextFilePath = path.join(projectDir, 'context.txt');
-  const fileTree = scanDirectory(projectDir, /\.config\.js$/, []);
+  const contextFilePath = 'context.txt';
 
+  // Get the current working directory (PWD)
+  const pwd = process.cwd();
+
+  // Generate the file tree using the `tree` command
+  const fileTree = execSync(`tree "${pwd}" -I "node_modules|dist|build|context.txt|*.log"`).toString();
+
+  fs.writeFileSync(contextFilePath, `--- CURRENT WORKING DIRECTORY: ${pwd} ---\n\n`);
   fs.writeFileSync(contextFilePath, '--- FILE TREE ---\n');
-  fs.appendFileSync(contextFilePath, fs.readFileSync(path.join(projectDir, 'tree.txt')));
+  fs.writeFileSync(contextFilePath, fileTree, { flag: 'a' });
 
-  fs.appendFileSync(contextFilePath, '\n\n--- PACKAGE.JSON ---\n');
-  fs.appendFileSync(contextFilePath, fs.readFileSync(path.join(projectDir, 'package.json')));
+  // Define the files to include the contents
+  const files = [
+    'svelte.config.js',
+    'vite.config.js',
+    'postcss.config.cjs',
+    'package.json',
+    'project_description.md',
+    'project_status.md',
+  ];
 
-  fs.appendFileSync(contextFilePath, '\n\n--- PROJECT_DESCRIPTION.MD ---\n');
-  fs.appendFileSync(contextFilePath, fs.readFileSync(path.join(projectDir, 'project_description.md')));
-
-  fs.appendFileSync(contextFilePath, '\n\n--- PROJECT_STATUS.MD ---\n');
-  fs.appendFileSync(contextFilePath, fs.readFileSync(path.join(projectDir, 'project_status.md')));
-
-  for (const configFile of fileTree) {
-    fs.appendFileSync(contextFilePath, `\n\n--- ${path.basename(configFile).toUpperCase()} ---\n`);
-    fs.appendFileSync(contextFilePath, fs.readFileSync(configFile));
+  for (const file of files) {
+    fs.appendFileSync(contextFilePath, `\n\n--- ${file.toUpperCase()} ---\n`);
+    fs.appendFileSync(contextFilePath, fs.readFileSync(path.join(pwd, file)));
   }
 }
 
