@@ -13,7 +13,7 @@ function generateContext() {
   const fileTree = execSync(`tree "${pwd}" -I "node_modules|dist|build|context.txt|*.log"`).toString();
 
   // Write the context information to the file
-  fs.writeFileSync(contextFilePath, "The following information is context information about this project for the purpose of informing AI about the project. It includes a file tree of the project, the contents of certain files, and a project description and status.\n\n");
+  fs.writeFileSync(contextFilePath, "The following information is context  about this project for the purpose of informing AI collaboration. It includes a file tree of the project, the contents of certain files, and a project description and status.\n\n");
 
   fs.appendFileSync(contextFilePath, `--- CURRENT WORKING DIRECTORY: ${pwd} ---\n\n`);
   fs.appendFileSync(contextFilePath, '--- FILE TREE ---\n');
